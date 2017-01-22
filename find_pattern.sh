@@ -4,9 +4,7 @@
 #Default arguments
 GETOPT_RESULT=$(getopt -o i,c,l:,k: -l name:,color -- "$@" )
 eval set -- "${GETOPT_RESULT}"
-#echo "$@"
 REGEXP="*.c"
-#"*.[c|o]"
 LOC=.
 COLOR_FLAG="0"
 KEY="empty"
@@ -66,10 +64,10 @@ do
 		printf "\033[32m"
 	fi
 	#echo "$GREP_CMD_CUR"
-	echo "${file}:";
-	
+	echo "${file}:";	
 	if [ "$COLOR_FLAG" == "1" ]; then
 		printf "\033[0m"
 	fi
 	$GREP_CMD_CUR
 done
+
